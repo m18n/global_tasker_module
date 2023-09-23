@@ -2,6 +2,8 @@
 void url::init_api_url(crow::SimpleApp &app) {
   CROW_ROUTE(app, "/")
   ([]() { return "global tasker node"; });
+  CROW_ROUTE(app, "/api/web/getid")
+  ([]( crow::request &req, crow::response &res)  { controller::get_id(req,res); });
   // // TELEGRAM
   // CROW_ROUTE(app, "/api/telegram/command/<int>/getauthcode")
   // ([]( crow::request &req, crow::response &res,int id)  { controller::telegram::get_auth_code(req,res,id); });

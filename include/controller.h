@@ -1,16 +1,9 @@
 #pragma once
 #include "crow.h"
+#include"tasker.h"
 #include <thread>
 
 namespace controller {
-    namespace telegram{
-        
-    }
-    namespace manager{
-
-    }
-    namespace chatgpt
-    {
-        
-    }    
+    extern tasker tk;
+    void get_id(crow::request& req, crow::response& res);
 } // namespace controller

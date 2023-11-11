@@ -1,20 +1,16 @@
 #pragma once
-#include "url.h"
-
+#define NAME_CLIENT "global_tasker_node"
+#define NAME_SERVER "global_tasker_node"
+#include"web_server.h"
 #include <iostream>
 
 class global_tasker_node {
 public:
   global_tasker_node() {
-    url::init_api_url(tasker_node_api);
-    tasker_node_api.port(3000).run();
-  }
-  void telegram_auth(){
-    
+    web.add_conn_server("127.0.0.1:3000");
+    web.start_server(3001);
   }
 private:
-
-  crow::SimpleApp tasker_node_api;
-  
+  server::web_server web;
  
 };

@@ -1,0 +1,3 @@
+[submodule "server_logic"]
+	path = server_logic
+	url = https://github.com/m18n/server_logic.git
